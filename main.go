@@ -14,6 +14,7 @@ func main() {
 	router.GET("/", func(context *gin.Context) {
 		infrastructure.LoadEnv()
 		infrastructure.NewDatabase()
+		print("1")
 		context.JSON(http.StatusOK, gin.H{"data": "Hello World !"})
 	})
 	router.Run(":8000")
